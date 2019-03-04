@@ -1,0 +1,31 @@
+{
+  ".": [
+    {
+      "file": "download.py"
+    },
+    {
+      "file": "makeDirJSON.py"
+    },
+    {
+      "myfolder": [
+        {
+          "childfolder": [
+            {
+              "secondfolder": [
+                {
+                  "file": "hello.txt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "file": "hmm.txt"
+        }
+      ]
+    },
+    {
+      "file": "tree.json"
+    }
+  ]
+}
