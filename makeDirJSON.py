@@ -30,15 +30,8 @@ def path_to_dict(path):
 
 
 # create json file
-def createJSON(files, directories):
+def createJSON():
     with open("tree.json", "w") as outfile:
         json.dump(path_to_dict("./testfolder"), outfile)
 
-
-# make json tree
-files = []
-dirs = []
-for root, directories, filenames in os.walk("."):
-    files.append(filenames)
-    dirs.append(directories)
-createJSON(files, dirs)
+createJSON()
