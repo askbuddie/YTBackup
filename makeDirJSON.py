@@ -16,25 +16,26 @@ import json
 #     return d
 
 
+# get the paths and files
 def path_to_dict(path):
-  root = {}
-  if os.path.isfile(path):
-    root = {"file": os.path.basename(path)}
+    data = {}
+    if os.path.isfile(path):
+        data = os.path.basename(path)
 
-  if os.path.isdir(path):
-    root[os.path.basename(path)] = [
-        path_to_dict(os.path.join(path, x)) for x in os.listdir(path)
-    ]
-
-    # print(os.path.join(path, x))
-  return root
+    if os.path.isdir(path):
+        data[os.path.basename(path)] = [
+            path_to_dict(os.path.join(path, x)) for x in os.listdir(path)
+        ]
+    return data
 
 
+# create json file
 def createJSON(files, directories):
     with open("tree.json", "w") as outfile:
-        json.dump(path_to_dict("."), outfile)
+        json.dump(path_to_dict("./testfolder"), outfile)
 
 
+# make json tree
 files = []
 dirs = []
 for root, directories, filenames in os.walk("."):

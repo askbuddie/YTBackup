@@ -1,10 +1,11 @@
 # import urllib.request
 # from bs4 import BeautifulSoup
 # from pytube import YouTube
+
 import os
 import json
 
-with open("./files.json") as f:
+with open("./testfolder.json") as f:
     data = json.load(f)
     for x in data:
         for xx in data[x]:
