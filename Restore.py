@@ -34,8 +34,11 @@ with open(BACKUP_FILE) as f:
     data = json.load(f)
     for i in data:
         # full path - "/video/html/my-video.mp"
+
         # get the title - "my-video.mp"
         title = os.path.basename(i)
+        title, ext = os.path.splitext(title)
+
         # get the dirname - "/video/html"
         dirname = os.path.join(OUTPUT_FOLDER, os.path.dirname(i))
         os.makedirs(dirname)
