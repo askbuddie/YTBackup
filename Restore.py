@@ -41,7 +41,8 @@ with open(BACKUP_FILE) as f:
 
         # get the dirname - "/video/html"
         dirname = os.path.join(OUTPUT_FOLDER, os.path.dirname(i))
-        os.makedirs(dirname)
+        if os.path.exists(dirname) == False:
+            os.makedirs(dirname)
         
         yt = YouTube(get_video_link(title), on_progress_callback=get_progress)
         video = yt.streams.first()
