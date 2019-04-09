@@ -1,0 +1,4 @@
+beautifulsoup4==4.7.1
+hachoir==3.0a4
+pytube==9.4.0
+soupsieve==1.9

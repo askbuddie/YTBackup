@@ -1,8 +1,9 @@
 import os
 import json
-import json
 import subprocess
+import sys
 
+print(str(sys.argv))
 def get_media_metadata(filename):
     result = subprocess.Popen(['hachoir-metadata', filename, '--raw'],
         stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
