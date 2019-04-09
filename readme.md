@@ -1,4 +1,4 @@
-<img align="center" src="./assets/logo.png" width="200px"/>
+<img align="center" src="./assets/logo.png" />
 
 ### **Better Backup Strategy For Your Youtube Videos.**
 
