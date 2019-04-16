@@ -11,6 +11,7 @@ from pytube import YouTube
 
 COMMAND_TYPE = sys.argv
 
+ERROR = ''
 
 # Backup function
 def Backup():
@@ -25,6 +26,10 @@ def Backup():
         # just a little bit of error checking
         if isinstance(results, list):
             try:
+                if results[0].startswith("[err!]"):
+                  ERROR = 'FILE_ERROR'
+                  return ERROR
+                
                 if results[3].startswith("- height: "):
                     return int(results[3].lstrip("- height: "))
                 else:
@@ -52,7 +57,10 @@ def Backup():
         print("\rDoing Work ( {0} )".format(next(spinner)), end="")
 
         if os.path.isfile(path):
-            data.append([os.path.relpath(path), get_media_metadata(os.path.relpath(path))])
+          video_info = get_media_metadata(os.path.relpath(path))
+          # checks if there is any error (ie: if its not a video)
+          if video_info != 'FILE_ERROR':
+            data.append([os.path.relpath(path), video_info])
 
         if os.path.isdir(path):
             for x in os.listdir(path):
