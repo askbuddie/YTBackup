@@ -5,7 +5,7 @@ email, or any other method with the owners of this repository before making a ch
 
 ## Pull Request Process
 
-1. Update the README.md with details of changes you made to the scripts ot document in the code.
+1. Update the README.md with details of changes you made to the scripts or document in the code.
 2. Increase the version numbers in any examples files and the README.md to the new version that this
    Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
 3. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
