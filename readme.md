@@ -5,8 +5,8 @@
 Python script to make JSON directory tree and downloading Youtube videos inside that folder automatically.
 
 ## :information_source: What Does it Do?
-YTBackup is a efficient backup technique for your youtube video folders.
-let say you have tons of youtube videos which you downloaded from any sources like ``ssyoutube``, ``9xyoutube`` etc etc. and you want to make a backup for it. so YTBackup will automatically create a JSON (Javascript Object Notation) file containing all the videos you have in the folder with their titles, and resolution like this ``{["videos\\myvideotitle.mp4", 720]}``.
+YTBackup is an efficient backup technique for your youtube video folders.
+let say you have tons of youtube videos which you downloaded from any online YouTube video downloaders like ``ssyoutube``, ``9xyoutube`` etc etc. and you want to make a backup for it. so YTBackup will automatically create a JSON (Javascript Object Notation) file containing all the videos you have in the folder with their respective titles, and resolution like this ``{["videos\\myvideotitle.mp4", 720]}``.
 
 YTBackup Restores all the videos as the same folder structure previously have which is a great thing about it.
 
