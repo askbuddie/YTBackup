@@ -8,10 +8,15 @@ import urllib.request
 from bs4 import BeautifulSoup
 from pytube import YouTube
 
+import tkinter as tk;
+from tkinter import filedialog
 
 COMMAND_TYPE = sys.argv
 
 ERROR = ''
+
+
+
 
 # Backup function
 def Backup():
@@ -41,7 +46,8 @@ def Backup():
             return None
 
     data = []
-    PATH_NAME = input("Enter Directory Name To Backup: ")
+    # PATH_NAME = input("Enter Directory Name To Backup: ")
+    PATH_NAME = dest_folder_path.get()
 
     # spinner strings
     def spinning_cursor():
@@ -129,6 +135,40 @@ def Restore():
 
             print('\nDownloading "' + str(title) + '" size: ' + filesizeMB)
             video.download(dirname)
+
+
+
+
+# ---------------- UI --------
+window = tk.Tk()
+window.title('YTBackup')
+window.geometry("600x400") #Width x Height
+window.resizable(width=False, height=False)
+# title
+title = tk.Label(text='YTBackup', font=('Century Gothic', 18, 'normal'))
+title.grid(row=0, column=3, pady=20)
+
+# filedialoug
+dest_folder_path = tk.StringVar()
+def browse_button_dest():
+    global dest_folder_path
+    
+    filename = filedialog.askdirectory()
+
+    dest_folder_path.set(filename)
+    print(filename)
+
+# destination
+file_Label = tk.Label(text='Destination Folder')
+filedialog_btn = tk.Button(text="Browse", command=browse_button_dest, width=20)
+file_Label.grid(row=1, sticky=tk.E)
+filedialog_btn.grid(row=1, column=5, sticky=tk.W)
+
+# # button
+button = tk.Button(text='Backup', command=Backup, width=10)
+button.grid(row=2, column=5, pady=10, sticky=tk.E)
+
+window.mainloop()
 
 
 # check for args
