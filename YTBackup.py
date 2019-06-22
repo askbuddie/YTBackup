@@ -1,3 +1,5 @@
+# !/usr/bin/python3
+
 import os
 import json
 import sys
@@ -7,16 +9,15 @@ import subprocess
 import urllib.request
 from bs4 import BeautifulSoup
 from pytube import YouTube
-
-import tkinter as tk;
-from tkinter import filedialog
+import tkinter as tk
+import tkinter.filedialog as fd
+from tkinter import ttk
+from tkinter import messagebox
 
 COMMAND_TYPE = sys.argv
-
+dest_folder_path = ""
+dest_file_path = ""
 ERROR = ''
-
-
-
 
 # Backup function
 def Backup():
@@ -40,27 +41,19 @@ def Backup():
                 else:
                     return None
             except IndexError:
-                print("\n* No Dimensions Found for " + filename)
+                messagebox.showerror("Error","Unable to find any dimensions")
                 return None
         else:
             return None
 
     data = []
-    # PATH_NAME = input("Enter Directory Name To Backup: ")
-    PATH_NAME = dest_folder_path.get()
+    PATH_NAME = dest_folder_path
 
-    # spinner strings
-    def spinning_cursor():
-        while True:
-            for cursor in "|/-\\":
-                yield cursor
-
-    spinner = spinning_cursor()
-
+    
     # creates the array
     def create_file_lists(path):
         # spinner
-        print("\rDoing Work ( {0} )".format(next(spinner)), end="")
+        
 
         if os.path.isfile(path):
           video_info = get_media_metadata(os.path.relpath(path))
@@ -76,9 +69,10 @@ def Backup():
 
     # create json file
     def createJSON():
-        with open(PATH_NAME + ".json", "w") as outfile:
-            json.dump(create_file_lists(PATH_NAME), outfile)
-            print("\nSuccessfully created " + PATH_NAME + ".json")
+       
+        with open(dest_file_path, "w") as outfile:
+            json.dump(create_file_lists(dest_folder_path), outfile)
+            messagebox.showinfo("Backup Succesfully", "Succesfully Created Backup :)")
 
     createJSON()
 
@@ -139,44 +133,85 @@ def Restore():
 
 
 
-# ---------------- UI --------
-window = tk.Tk()
-window.title('YTBackup')
-window.geometry("600x400") #Width x Height
-window.resizable(width=False, height=False)
-# title
-title = tk.Label(text='YTBackup', font=('Century Gothic', 18, 'normal'))
-title.grid(row=0, column=3, pady=20)
+def backup():
+    BackupButton.config(text="Loading...")
+    Backup()
+    BackupButton.config(text="Backup")
 
-# filedialoug
-dest_folder_path = tk.StringVar()
-def browse_button_dest():
+
+def openfolder():
     global dest_folder_path
+    directory = fd.askdirectory(parent=window)
+    folderNameLabel.config(text=directory)
+    dest_folder_path = directory
+    #implementation needed upon folder
     
-    filename = filedialog.askdirectory()
+    
+def openfile():
+    global dest_file_path
+    file = fd.asksaveasfilename(parent=window)
+    dest_file_path = file
+    outputFolderNameLabel.config(text=file)
+    #implementation needed upon file    
 
-    dest_folder_path.set(filename)
-    print(filename)
 
-# destination
-file_Label = tk.Label(text='Destination Folder')
-filedialog_btn = tk.Button(text="Browse", command=browse_button_dest, width=20)
-file_Label.grid(row=1, sticky=tk.E)
-filedialog_btn.grid(row=1, column=5, sticky=tk.W)
+window = tk.Tk()
 
-# # button
-button = tk.Button(text='Backup', command=Backup, width=10)
-button.grid(row=2, column=5, pady=10, sticky=tk.E)
+window.title("YT Backup")
+window.geometry('800x400')
+window.resizable(width=False, height=False)
+
+tabbedView = ttk.Notebook(window)
+backupTab = ttk.Frame(tabbedView)
+restoreTab = ttk.Frame(tabbedView)
+
+tabbedView.add(backupTab, text='Backup')
+tabbedView.add(restoreTab, text='Restore')
+tabbedView.pack(expand=1, fill='both')
+
+staticOpenFolderLabel = tk.Label(backupTab, text="Destination Folder")
+staticOpenFolderLabel.place(x=150,y=100)
+
+openFolderButton= tk.Button(backupTab,text='Browse', command=openfolder, width=10)
+openFolderButton.place(x=150,y=130)
+
+
+folderNameLabel = tk.Label(backupTab,text="")
+folderNameLabel.place(x=150,y=170)
+
+
+staticOutputFileLabel = tk.Label(backupTab,text="Destination File")
+staticOutputFileLabel.place(x=505,y=100)
+
+openFileButton= tk.Button(backupTab,text='Browse', command=openfile, width=10)
+openFileButton.place(x=500,y=130)
+
+
+outputFolderNameLabel = tk.Label(backupTab,text="")
+outputFolderNameLabel.place(x=500,y=170)
+
+BackupButton = tk.Button(backupTab,text='Backup',command=backup)
+BackupButton.place(x=250,y=300,width=300,height=50) #400 2006
+
+
+RestoreButton = tk.Button(restoreTab,text='Restore')
+RestoreButton.place(x=250,y=300,width=300,height=50)
+
 
 window.mainloop()
 
 
-# check for args
-if len(COMMAND_TYPE) > 1:
-  if COMMAND_TYPE[1] == "--backup":
-      Backup()
-  elif COMMAND_TYPE[1] == "--restore":
-      Restore()
-else:
-    print("Please specify what do you want to do --backup or --restore")
+
+
+
+
+
+# # check for args
+# if len(COMMAND_TYPE) > 1:
+#   if COMMAND_TYPE[1] == "--backup":
+#       Backup()
+#   elif COMMAND_TYPE[1] == "--restore":
+#       Restore()
+# else:
+#     print("Please specify what do you want to do --backup or --restore")
 
