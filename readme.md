@@ -76,6 +76,13 @@ please refer to our Contribution Guide [here](./CONTRIBUTING.md)
       <br />
     </td>
     <td align="center">
+      <a href="https://github.com/geekyarthurs">
+      <img src="https://avatars3.githubusercontent.com/u/36955694?s=460&v=3" width="100px;" alt="Mahesh C. Regmi"/>
+      <br />
+      <sub><b>Mahesh C. Regmi</b></sub></a>
+      <br />
+    </td>
+    <td align="center">
       <a href="https://github.com/ashiishme">
       <img src="https://avatars3.githubusercontent.com/u/18111862?s=460&v=3" width="100px;" alt="Hemanta Pokharel"/>
       <br />
