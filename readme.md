@@ -53,7 +53,13 @@ please refer to our Contribution Guide [here](./CONTRIBUTING.md)
 
 ## :octocat: Author
 
-- **[Anurag Hazra](https://anuraghazra.github.io)**
+- **Ask Buddie**
+
+-----------
+
+## :octocat: Primary Contributor
+
+- **[Asl Hazra](https://anuraghazra.github.io)**
 - hazru.anurag@gmail.com
 
 -----------
