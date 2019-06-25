@@ -59,7 +59,7 @@ please refer to our Contribution Guide [here](./CONTRIBUTING.md)
 
 ## :octocat: Primary Contributor
 
-- **[Asl Hazra](https://anuraghazra.github.io)**
+- **[Anurag Hazra](https://anuraghazra.github.io)**
 - hazru.anurag@gmail.com
 
 -----------
