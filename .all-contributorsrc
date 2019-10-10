@@ -37,6 +37,16 @@
         "doc",
         "bug"
       ]
+    },
+    {
+      "login": "ashiishme",
+      "name": "Ashish Yadav",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/18111862?v=4",
+      "profile": "http://www.ashiish.me",
+      "contributions": [
+        "doc",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
