@@ -27,6 +27,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ABrynelsen",
+      "name": "ABrynelsen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17970380?v=4",
+      "profile": "https://github.com/ABrynelsen",
+      "contributions": [
+        "doc",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
