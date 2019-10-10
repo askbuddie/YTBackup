@@ -57,49 +57,6 @@ please refer to our Contribution Guide [here](./CONTRIBUTING.md)
 
 -----------
 
-## :octocat: Primary Contributor
-
-- **[Anurag Hazra](https://anuraghazra.github.io)**
-- hazru.anurag@gmail.com
-
------------
-
-## :stars: Contributors
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://anuraghazra.github.io">
-      <img src="https://avatars1.githubusercontent.com/u/35374649?s=460&v=3" width="100px;" alt="Anurag Hazra"/>
-      <br />
-      <sub><b>Anurag Hazra</b></sub></a>
-      <br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/Hemant-H9">
-      <img src="https://avatars3.githubusercontent.com/u/35365105?s=460&v=3" width="100px;" alt="Hemanta Pokharel"/>
-      <br />
-      <sub><b>Hemanta Pokharel</b></sub></a>
-      <br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/geekyarthurs">
-      <img src="https://avatars3.githubusercontent.com/u/36955694?s=460&v=3" width="100px;" alt="Mahesh C. Regmi"/>
-      <br />
-      <sub><b>Mahesh C. Regmi</b></sub></a>
-      <br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/ashiishme">
-      <img src="https://avatars3.githubusercontent.com/u/18111862?s=460&v=3" width="100px;" alt="Hemanta Pokharel"/>
-      <br />
-      <sub><b>Ashish Yadav</b></sub></a>
-      <br />
-    </td>
-  </tr>
-</table>
-
------------
-
 Thanks to [Ashish](https://github.com/ashiishme) for giving me an opportunity to contribute on AskBuddie
 
 :heart: AskBuddie
