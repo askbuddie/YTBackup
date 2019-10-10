@@ -47,6 +47,16 @@
         "doc",
         "maintenance"
       ]
+    },
+    {
+      "login": "pr0d33p",
+      "name": "Pradeep Bhattarai",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29733866?v=4",
+      "profile": "https://www.pradeepbhattarai.me",
+      "contributions": [
+        "doc",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
