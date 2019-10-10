@@ -18,6 +18,15 @@
         "maintenance",
         "tool"
       ]
+    },
+    {
+      "login": "geekyarthurs",
+      "name": "Mahesh C. Regmi",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/36955694?v=4",
+      "profile": "http://geekyarthurs.github.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
